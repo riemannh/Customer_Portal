@@ -7,4 +7,6 @@
     <string name="table_select_title">选择桌位</string>
     <string name="_2menu">点 餐</string>
     <string name="_2tableSelect">选 桌</string>
+    <string name="back">返 回</string>
+    <string name="submit">点 菜</string>
 </resources>
