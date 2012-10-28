@@ -20,12 +20,14 @@ public final class R {
         public static final int a540121_210647038_2=0x7f020006;
         public static final int a540121_211813052_2=0x7f020007;
         public static final int a798308_214146005_2=0x7f020008;
-        public static final int bluebutton=0x7f020009;
-        public static final int button=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int main=0x7f02000c;
-        public static final int success=0x7f02000d;
-        public static final int yxrs=0x7f02000e;
+        public static final int bitmap=0x7f020009;
+        public static final int bluebutton=0x7f02000a;
+        public static final int button=0x7f02000b;
+        public static final int gold_bg=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int main=0x7f02000e;
+        public static final int success=0x7f02000f;
+        public static final int yxrs=0x7f020010;
     }
     public static final class id {
         public static final int dish_list=0x7f050005;
