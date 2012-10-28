@@ -5,7 +5,7 @@
               android:layout_height="fill_parent"
               android:background="@drawable/main"
         >
-    <Button android:layout_width="wrap_content"
+    <!--<Button android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="200"
             android:layout_marginLeft="500"
@@ -20,6 +20,6 @@
             android:textSize="80"
             android:text="@string/_2tableSelect"
             android:background="@drawable/bluebutton"
-            android:id="@+id/_2tableSelect"/>
+            android:id="@+id/_2tableSelect"/>-->
 </LinearLayout>
 

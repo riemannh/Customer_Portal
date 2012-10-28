@@ -17,6 +17,6 @@ public class TableSelect extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tableSelect);
+        setContentView(R.layout.table_select);
     }
 }

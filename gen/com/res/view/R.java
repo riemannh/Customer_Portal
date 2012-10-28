@@ -8,37 +8,50 @@
 package com.res.view;
 
 public final class R {
-
-    public static final class attr {}
-
+    public static final class attr {
+    }
     public static final class drawable {
-
-        public static final int ic_launcher = 0x7f020000;
+        public static final int a540121_092321038_2=0x7f020000;
+        public static final int a540121_102453037_2=0x7f020001;
+        public static final int a540121_141453005_2=0x7f020002;
+        public static final int a540121_165634036_2=0x7f020003;
+        public static final int a540121_193726089_2=0x7f020004;
+        public static final int a540121_202313054_2=0x7f020005;
+        public static final int a540121_210647038_2=0x7f020006;
+        public static final int a540121_211813052_2=0x7f020007;
+        public static final int a798308_214146005_2=0x7f020008;
+        public static final int bluebutton=0x7f020009;
+        public static final int button=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int main=0x7f02000c;
+        public static final int success=0x7f02000d;
+        public static final int yxrs=0x7f02000e;
     }
-
+    public static final class id {
+        public static final int dish_list=0x7f050005;
+        public static final int dish_view=0x7f050004;
+        public static final int main=0x7f050002;
+        public static final int main_top=0x7f050003;
+        public static final int nav=0x7f050000;
+        public static final int recommend_dish=0x7f050001;
+    }
     public static final class layout {
-
-        public static final int main = 0x7f030000;
-
-        public static final int menu = 0x7f030001;
-
-        public static final int menuDetail = 0x7f030002;
-
-        public static final int tableSelect = 0x7f030003;
-
-        public static final int confirm = 0x7f030004;
-
-        public static final int success = 0x7f030005;
+        public static final int confirm=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int menu=0x7f030002;
+        public static final int menu_detail=0x7f030003;
+        public static final int success=0x7f030004;
+        public static final int table_select=0x7f030005;
     }
-
     public static final class string {
-
-        public static final int app_name = 0x7f040000;
-
-        public static final int hello = 0x7f040001;
-
-        public static final int menu_title = 0x7f040002;
-
-        public static final int menu_detail_title = 0x7f040003;
+        public static final int _2menu=0x7f040005;
+        public static final int _2tableSelect=0x7f040006;
+        public static final int app_name=0x7f040000;
+        public static final int back=0x7f040007;
+        public static final int hello=0x7f040001;
+        public static final int menu_detail_title=0x7f040003;
+        public static final int menu_title=0x7f040002;
+        public static final int submit=0x7f040008;
+        public static final int table_select_title=0x7f040004;
     }
 }

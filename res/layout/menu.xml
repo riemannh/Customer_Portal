@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-        >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent">
+    <LinearLayout android:id="@+id/nav"
+                  android:orientation="vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="fill_parent"
+                  android:background="#000000">
+        <Button android:id="@+id/recommend_dish"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:text="招牌菜"
+                android:layout_marginTop="50dip"/>
+        <Button android:id="@+id/recommend_dish"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:text="热菜"
+                android:layout_marginTop="50dip"/>
+        <Button android:id="@+id/recommend_dish"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:text="凉菜"
+                android:layout_marginTop="50dip"/>
+        <Button android:id="@+id/recommend_dish"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:text="主食"
+                android:layout_marginTop="50dip"/>
+        <Button android:id="@+id/recommend_dish"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:text="酒水"
+                android:layout_marginTop="50dip"/>
+        <Button android:id="@+id/recommend_dish"
+                android:layout_width="150dip"
+                android:layout_height="wrap_content"
+                android:text="甜品"
+                android:layout_marginTop="50dip"/>
+    </LinearLayout>
+    <RelativeLayout android:id="@+id/main"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignTop="@id/nav"
+                    android:layout_toRightOf="@id/nav"
+                    android:background="#ffffcc">
+        <TextView android:id="@+id/main_top"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:text="XXX点餐系统"
+                  android:background="#cccc00"
+                  android:textColor="#333333"
+                  android:textSize="50dip"/>
+        <ScrollView android:id="@+id/dish_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/main_top">
+            <HorizontalScrollView android:id="@+id/dish_list"
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="wrap_content"
+                    >
 
-</LinearLayout>
+            </HorizontalScrollView>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>
 

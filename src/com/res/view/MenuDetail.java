@@ -14,9 +14,10 @@ import android.os.Bundle;
  */
 
 public class MenuDetail extends Activity {
+
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menuDetail);
+        setContentView(R.layout.menu_detail);
     }
 }
