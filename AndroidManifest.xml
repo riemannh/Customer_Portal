@@ -14,8 +14,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Menu"
-                  android:label="@string/menu_title"
-                  android:screenOrientation="landscape">
+                  android:label="@string/menu_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

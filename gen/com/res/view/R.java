@@ -23,19 +23,32 @@ public final class R {
         public static final int bitmap=0x7f020009;
         public static final int bluebutton=0x7f02000a;
         public static final int button=0x7f02000b;
-        public static final int gold_bg=0x7f02000c;
-        public static final int ic_launcher=0x7f02000d;
-        public static final int main=0x7f02000e;
-        public static final int success=0x7f02000f;
-        public static final int yxrs=0x7f020010;
+        public static final int cold_dish=0x7f02000c;
+        public static final int dessert=0x7f02000d;
+        public static final int drink=0x7f02000e;
+        public static final int famous_dish=0x7f02000f;
+        public static final int gold_bg=0x7f020010;
+        public static final int hot_dish=0x7f020011;
+        public static final int ic_launcher=0x7f020012;
+        public static final int main=0x7f020013;
+        public static final int nav_show=0x7f020014;
+        public static final int staple_food=0x7f020015;
+        public static final int success=0x7f020016;
+        public static final int yxrs=0x7f020017;
     }
     public static final class id {
-        public static final int dish_list=0x7f050005;
-        public static final int dish_view=0x7f050004;
-        public static final int main=0x7f050002;
-        public static final int main_top=0x7f050003;
-        public static final int nav=0x7f050000;
-        public static final int recommend_dish=0x7f050001;
+        public static final int cold_dish_btn=0x7f050004;
+        public static final int dessert_btn=0x7f050006;
+        public static final int dish_main=0x7f05000b;
+        public static final int drink_btn=0x7f050007;
+        public static final int famous_dish_btn=0x7f050002;
+        public static final int hot_dish_btn=0x7f050003;
+        public static final int main_view=0x7f050008;
+        public static final int menu_view_group=0x7f050000;
+        public static final int nav_show=0x7f05000a;
+        public static final int nav_view=0x7f050001;
+        public static final int staple_food_btn=0x7f050005;
+        public static final int title=0x7f050009;
     }
     public static final class layout {
         public static final int confirm=0x7f030000;
@@ -50,9 +63,15 @@ public final class R {
         public static final int _2tableSelect=0x7f040006;
         public static final int app_name=0x7f040000;
         public static final int back=0x7f040007;
+        public static final int cold_dish=0x7f04000b;
+        public static final int dessert=0x7f04000d;
+        public static final int drink=0x7f04000e;
+        public static final int famous_dish=0x7f040009;
         public static final int hello=0x7f040001;
+        public static final int hot_dish=0x7f04000a;
         public static final int menu_detail_title=0x7f040003;
         public static final int menu_title=0x7f040002;
+        public static final int staple_food=0x7f04000c;
         public static final int submit=0x7f040008;
         public static final int table_select_title=0x7f040004;
     }

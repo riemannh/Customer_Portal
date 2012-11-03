@@ -9,4 +9,10 @@
     <string name="_2tableSelect">选 桌</string>
     <string name="back">返 回</string>
     <string name="submit">点 菜</string>
+    <string name="famous_dish">招牌菜</string>
+    <string name="hot_dish">热  菜</string>
+    <string name="cold_dish">凉  菜</string>
+    <string name="staple_food">主  食</string>
+    <string name="dessert">甜  点</string>
+    <string name="drink">酒水/饮料</string>
 </resources>
