@@ -1,10 +1,5 @@
 package com.res.adapter.parse;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Iterator;
-
 /**
  * Created on restaurant project V001R001.
  * Descriptions:

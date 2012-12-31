@@ -15,4 +15,6 @@
     <string name="staple_food">主  食</string>
     <string name="dessert">甜  点</string>
     <string name="drink">酒水/饮料</string>
+    <string name="test_flash">file:///sdcard/test_flash.html</string>
+    <string name="tableDescrip">选桌图片</string>
 </resources>

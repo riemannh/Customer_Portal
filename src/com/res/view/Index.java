@@ -1,9 +1,12 @@
 package com.res.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 public class Index extends Activity {
 
@@ -15,6 +18,26 @@ public class Index extends Activity {
         super.onCreate(savedInstanceState);
         hideStatusBar();
         setContentView(R.layout.main);
+        Button button2Menu = (Button) findViewById(R.id._2menu);
+        Button button2TableSelect = (Button) findViewById(R.id._2tableSelect);
+
+        button2Menu.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2Menu = new Intent();
+                intent2Menu.setClass(Index.this, Menu.class);
+                startActivity(intent2Menu);
+            }
+        });
+
+        button2TableSelect.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2TableSelect = new Intent();
+                intent2TableSelect.setClass(Index.this, Menu.class);
+                startActivity(intent2TableSelect);
+            }
+        });
     }
 
     private void hideTitle() {
