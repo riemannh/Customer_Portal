@@ -5,16 +5,18 @@
                 android:layout_height="fill_parent"
                 android:background="@drawable/ground_backj1200">
 
-    <ImageView android:src="@drawable/title_backg"
-               android:layout_width="1920dp"
-               android:layout_height="90dp" android:contentDescription="title"/>
+    <ImageView android:src="@drawable/title_back800"
+               android:layout_marginTop="-14dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:contentDescription="title"/>
 
-    <ImageView android:src="@drawable/table"
+    <ImageView android:src="@drawable/table800"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:contentDescription="@string/tableDescrip"
-               android:layout_marginTop="120dp"
-               android:layout_marginLeft="40dp"/>
+               android:layout_marginTop="50dp"
+               android:layout_marginLeft="20dp"/>
     <!--    <Button android:background="@drawable/butt_backb"
     android:text="选 桌"
     android:textSize="40dp"
@@ -25,23 +27,16 @@
     <TextView android:layout_height="wrap_content"
               android:layout_width="wrap_content"
               android:text="1号桌"
-              android:textColor="red"
-              android:textSize="40dp"
-              android:layout_marginLeft="40dp"
-              android:layout_marginTop="120dp"/>
+              android:textColor="@color/black"
+              android:textSize="20dp"
+              android:layout_marginTop="50dp"
+              android:layout_marginLeft="20dp"/>
 
 
-    <ImageView android:src="@drawable/table"
+   <!-- <ImageView android:src="@drawable/table"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:contentDescription="@string/tableDescrip"
                android:layout_marginTop="420dp"
-            />
-
-    <ImageView android:src="@drawable/table"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:contentDescription="@string/tableDescrip"
-               android:layout_marginTop="780dp"
-            />
+            />-->
 </RelativeLayout>

@@ -36,14 +36,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".Confirm"
-                  android:label="@string/table_select_title">
+                  android:label="@string/menu_confirm">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".Success"
-                  android:label="@string/table_select_title">
+                  android:label="@string/success">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
