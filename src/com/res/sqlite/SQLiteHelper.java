@@ -15,15 +15,15 @@ import static android.database.sqlite.SQLiteDatabase.CursorFactory;
  * Time: 上午6:55
  * version:[]
  */
-public class SQLLiteHelper extends SQLiteOpenHelper {
+public class SQLiteHelper extends SQLiteOpenHelper {
 
-    public SQLLiteHelper(Context context, String name, CursorFactory factory, int version) {
+    public SQLiteHelper(Context context, String name, CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        Log.v("SQLLiteHelper onCreate", "Creating all the tables");
+        Log.v("SQLiteHelper onCreate", "Creating all the tables");
         try {
             sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_MENU_INFO);
             sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_MENU_TYPE);

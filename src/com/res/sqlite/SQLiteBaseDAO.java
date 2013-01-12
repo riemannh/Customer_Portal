@@ -17,7 +17,7 @@ import com.res.beans.AbstractBean;
 public abstract class SQLiteBaseDAO {
     protected SQLiteDatabase database;
     protected Context context;
-    protected SQLLiteHelper dbHelper;
+    protected SQLiteHelper dbHelper;
 
     /**
      * 构造方法，创建了dbHelper对象
@@ -26,7 +26,7 @@ public abstract class SQLiteBaseDAO {
      */
     public SQLiteBaseDAO(Context cont) {
         this.context = cont;
-        dbHelper = new SQLLiteHelper(context, SQLConstant.DATABASE_NAME, null, SQLConstant.DATABASE_VERSION);
+        dbHelper = new SQLiteHelper(context, SQLConstant.DATABASE_NAME, null, SQLConstant.DATABASE_VERSION);
     }
 
 
