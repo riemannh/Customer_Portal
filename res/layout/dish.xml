@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:background="#fbb555">
+    <RelativeLayout android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:padding="5dp"
+                    android:background="#ab571b">
+        <ImageButton android:id="@+id/show_menu"
+                     android:layout_width="30dp"
+                     android:layout_height="30dp"
+                     android:layout_alignParentLeft="true"
+                     android:src="@drawable/show_menu"
+                     android:background="@drawable/shape"
+                     android:contentDescription="菜品分类"/>
+    </RelativeLayout>
+
+    <!--<ListView android:id="@android:id/list"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"/>-->
+    <GridView android:id="@+id/dish_list"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:numColumns="2"
+              android:horizontalSpacing="5dp"
+              android:verticalScrollbarPosition="right"
+              android:verticalSpacing="5dp"/>
+</LinearLayout>

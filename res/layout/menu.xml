@@ -1,67 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-    <com.res.view.MenuViewGroup android:id="@+id/menu_view_group"
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent">
-        <LinearLayout android:id="@+id/nav_view"
-                      android:layout_width="wrap_content"
-                      android:layout_height="fill_parent"
-                      android:orientation="vertical">
-            <Button android:id="@+id/famous_dish_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/famous_dish"/>
-            <Button android:id="@+id/hot_dish_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/hot_dish"
-                    android:gravity="bottom"/>
-            <Button android:id="@+id/cold_dish_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cold_dish"
-                    android:gravity="bottom"/>
-            <Button android:id="@+id/staple_food_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/staple_food"
-                    android:gravity="bottom"/>
-            <Button android:id="@+id/dessert_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dessert"
-                    android:gravity="bottom"/>
-            <Button android:id="@+id/drink_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/drink"
-                    android:gravity="bottom"/>
-        </LinearLayout>
-        <RelativeLayout android:id="@+id/main_view"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-            <LinearLayout android:id="@+id/title"
-                          android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:orientation="horizontal">
-                <ImageButton android:id="@+id/nav_show"
-                             android:layout_width="wrap_content"
-                             android:layout_height="wrap_content"
-                             android:src="@drawable/nav_show"
-                             android:contentDescription="菜单"/>
-                <TextView android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:text="主页面"/>
-            </LinearLayout>
-            <FrameLayout android:id="@+id/dish_main"
-                         android:layout_width="fill_parent"
-                         android:layout_height="fill_parent"
-                         android:layout_below="@id/title"
-                         android:layout_alignLeft="@id/title"/>
 
-        </RelativeLayout>
-    </com.res.view.MenuViewGroup>
-</RelativeLayout>
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/menu_list"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:padding="10dp">
+        <Button android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="招牌"
+                android:textSize="30dp"/>
+        <Button android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="热菜"
+                android:textSize="30dp"/>
+        <Button android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="凉菜"
+                android:textSize="30dp"/>
+        <Button android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="甜品"
+                android:textSize="30dp"/>
+        <Button android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="酒水"
+                android:textSize="30dp"/>
+        <Button android:layout_width="200dp"
+                android:layout_height="80dp"
+                android:text="主食"
+                android:textSize="30dp"/>
+    </LinearLayout>
+</ScrollView>

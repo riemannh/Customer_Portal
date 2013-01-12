@@ -5,7 +5,7 @@
                 android:layout_height="fill_parent"
                 android:background="@drawable/ground_backj1200">
 
-    <ImageView android:src="@drawable/title_back800"
+   <!-- <ImageView android:src="@drawable/title_back800"
                android:layout_marginTop="-14dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
                android:layout_height="wrap_content"
                android:contentDescription="@string/tableDescrip"
                android:layout_marginTop="50dp"
-               android:layout_marginLeft="20dp"/>
+               android:layout_marginLeft="20dp"/>-->
     <!--    <Button android:background="@drawable/butt_backb"
     android:text="选 桌"
     android:textSize="40dp"
