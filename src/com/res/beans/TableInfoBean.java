@@ -18,6 +18,12 @@ public class TableInfoBean extends AbstractBean {
     public static final String INFO = "info";
     public static final String STATUS = "status";
 
+    public static final String AVAILABLE_STATUS = "0";
+    public static final String BOOKED_STATUS = "1";
+    public static final String USED_STATUS = "2";
+    public static final String UNAVAILABLE_STATUS = "3";
+
+
     private String address;
     private String info;
     private String status;

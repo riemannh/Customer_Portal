@@ -4,39 +4,139 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@drawable/ground_backj1200">
-
+<!--
     <ImageView android:src="@drawable/title_back800"
                android:layout_marginTop="-14dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:contentDescription="title"/>
-
-    <ImageView android:src="@drawable/table800"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:contentDescription="@string/tableDescrip"
-               android:layout_marginTop="50dp"
-               android:layout_marginLeft="20dp"/>
-    <!--    <Button android:background="@drawable/butt_backb"
-    android:text="选 桌"
-    android:textSize="40dp"
-    android:layout_marginTop="280dp"
-    android:layout_marginLeft="110dp"
-    android:layout_height="60dp"
-    android:layout_width="140dp"/>-->
-    <TextView android:layout_height="wrap_content"
-              android:layout_width="wrap_content"
-              android:text="1号桌"
-              android:textColor="@color/black"
-              android:textSize="20dp"
-              android:layout_marginTop="50dp"
-              android:layout_marginLeft="20dp"/>
-
-
-   <!-- <ImageView android:src="@drawable/table"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:contentDescription="@string/tableDescrip"
-               android:layout_marginTop="420dp"
-            />-->
+               android:contentDescription="title"/>-->
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+            android:layout_marginTop="10dip">
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                 android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:layout_marginTop="100dip">
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:layout_marginTop="190dip">
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_marginLeft="40dp">
+            <ImageView android:src="@drawable/table800"
+                       android:layout_width="120dp"
+                       android:layout_height="80dp"
+                       android:contentDescription="@string/tableDescrip"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="1号桌"
+                      android:textColor="@color/black"
+                      android:textSize="10dp"/>
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

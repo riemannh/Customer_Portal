@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import com.res.beans.AbstractBean;
 import com.res.beans.TableInfoBean;
+import com.res.sqlite.ITableInfoDAO;
 import com.res.sqlite.SQLiteBaseDAO;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  * Time: 上午7:19
  * version:[]
  */
-public class TableInfoDAO extends SQLiteBaseDAO {
+public class TableInfoDAO extends SQLiteBaseDAO implements ITableInfoDAO {
     /**
      * 构造方法，创建了dbHelper对象
      *
@@ -38,8 +39,16 @@ public class TableInfoDAO extends SQLiteBaseDAO {
     }
 
     @Override
+    public boolean insert(List<TableInfoBean> tableInfoBeans) {
+        for (TableInfoBean tableInfoBean : tableInfoBeans) {
+            insert(tableInfoBean);
+        }
+        return true;
+    }
+
+    @Override
     public long update(AbstractBean abstractBean) {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return 0;
     }
 
     public List<TableInfoBean> getAll() {
