@@ -16,6 +16,22 @@
                      android:src="@drawable/show_menu"
                      android:background="@drawable/shape"
                      android:contentDescription="菜品分类"/>
+
+        <Button android:id="@+id/order_finish"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/shape"
+                android:layout_alignParentRight="true"
+                android:textColor="@android:color/white"
+                android:text="完成点餐"/>
+        <Button android:id="@+id/order_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:background="@drawable/shape"
+                android:layout_toLeftOf="@id/order_finish"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/white"
+                android:text="已点：0"/>
     </RelativeLayout>
 
     <!--<ListView android:id="@android:id/list"

@@ -69,22 +69,31 @@ public final class R {
         public static final int yxrs=0x7f020030;
     }
     public static final class id {
-        public static final int _2menu=0x7f070008;
-        public static final int _2tableSelect=0x7f070009;
-        public static final int detail_back=0x7f07000c;
-        public static final int detail_submit=0x7f07000d;
-        public static final int dish_frame=0x7f070002;
-        public static final int dish_list=0x7f070001;
-        public static final int enter=0x7f07000f;
-        public static final int flash=0x7f07000b;
-        public static final int menu_frame=0x7f07000e;
-        public static final int menu_list=0x7f07000a;
-        public static final int price=0x7f070007;
-        public static final int price_tip=0x7f070006;
-        public static final int row_icon1=0x7f070004;
-        public static final int row_title1=0x7f070005;
+        public static final int _2menu=0x7f07000b;
+        public static final int _2tableSelect=0x7f07000c;
+        public static final int cold=0x7f070010;
+        public static final int confirm=0x7f07000a;
+        public static final int dessert=0x7f070011;
+        public static final int detail_back=0x7f070015;
+        public static final int detail_submit=0x7f070016;
+        public static final int dish_frame=0x7f070004;
+        public static final int dish_list=0x7f070003;
+        public static final int drink=0x7f070012;
+        public static final int enter=0x7f070018;
+        public static final int famous=0x7f07000e;
+        public static final int flash=0x7f070014;
+        public static final int hot=0x7f07000f;
+        public static final int menu_frame=0x7f070017;
+        public static final int menu_list=0x7f07000d;
+        public static final int order_detail=0x7f070002;
+        public static final int order_finish=0x7f070001;
+        public static final int price=0x7f070009;
+        public static final int price_tip=0x7f070008;
+        public static final int row_icon1=0x7f070006;
+        public static final int row_title1=0x7f070007;
         public static final int show_menu=0x7f070000;
-        public static final int sliding_menu=0x7f070003;
+        public static final int sliding_menu=0x7f070005;
+        public static final int staple=0x7f070013;
     }
     public static final class layout {
         public static final int confirm=0x7f030000;
