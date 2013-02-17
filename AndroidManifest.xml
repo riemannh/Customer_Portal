@@ -36,12 +36,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Success"
-                  android:label="@string/success">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                  android:label="@string/success"/>
 
         <activity android:name="com.res.ui.WelcomeActivity">
             <intent-filter>
@@ -50,5 +45,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.res.ui.DishActivity"/>
+        <activity android:name="com.res.ui.OrderFinishActivity"/>
     </application>
 </manifest>

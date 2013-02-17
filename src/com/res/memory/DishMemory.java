@@ -70,6 +70,10 @@ public final class DishMemory {
         return dishOrderMap.size();
     }
 
+    public boolean isEmpty() {
+        return dishOrderMap.isEmpty();
+    }
+
     /**
      * 列出已点菜单名
      *
@@ -92,6 +96,28 @@ public final class DishMemory {
         List<DishOrder> dishOrderList = new ArrayList<DishOrder>();
         dishOrderList.addAll(dishOrders);
         return dishOrderList;
+    }
+
+    public List<Map<String, Object>> listDishOrderMap() {
+        Map<String, Object> orderMap;
+        Collection<DishOrder> dishOrders = dishOrderMap.values();
+        List<Map<String, Object>> dishOrderList = new ArrayList<Map<String, Object>>();
+        for (DishOrder dishOrder : dishOrders) {
+            orderMap = new HashMap<String, Object>();
+            orderMap.put("name", dishOrder.getName());
+            orderMap.put("count", dishOrder.getCount());
+            dishOrderList.add(orderMap);
+        }
+        return dishOrderList;
+    }
+
+    public double totalCost() {
+        double totalCost = 0;
+        Collection<DishOrder> dishOrders = dishOrderMap.values();
+        for (DishOrder dishOrder : dishOrders) {
+            totalCost += dishOrder.getPrice() * dishOrder.getCount();
+        }
+        return totalCost;
     }
 
     /**
