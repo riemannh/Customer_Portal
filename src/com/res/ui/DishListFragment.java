@@ -66,6 +66,7 @@ public class DishListFragment extends Fragment {
         });
 
         //已点按钮
+        orderDetailBtn.setText("已点：" + dishMemory.size());
         orderDetailBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), OrderFinishActivity.class);

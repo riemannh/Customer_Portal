@@ -38,7 +38,7 @@ public final class DishMemory {
         if (isOrdered(dishOrder.getName())) {
             DishOrder orderedDish = dishOrderMap.get(dishOrder.getName());
             int count = orderedDish.getCount();
-            orderedDish.setCount(count++);
+            orderedDish.setCount(++count);
             dishOrderMap.put(dishOrder.getName(), orderedDish);
         } else {
             dishOrderMap.put(dishOrder.getName(), dishOrder);

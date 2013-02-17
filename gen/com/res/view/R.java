@@ -80,8 +80,9 @@ public final class R {
         public static final int dish_list=0x7f070003;
         public static final int dishname=0x7f070018;
         public static final int drink=0x7f070012;
-        public static final int enter=0x7f07001f;
+        public static final int enter=0x7f070020;
         public static final int famous=0x7f07000e;
+        public static final int finish_back=0x7f07001f;
         public static final int finish_order_back=0x7f07001c;
         public static final int finish_order_list=0x7f070019;
         public static final int finish_order_ok=0x7f07001b;
