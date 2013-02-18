@@ -69,8 +69,65 @@ public class DataPrepare {
      * 准备菜品数据
      */
     private void setDishInfoBeans() {
-        DishInfoBean dishInfoBean;
-        dishInfoBean = new DishInfoBean();
-        //    dishInfoBean.setName();
+        DishInfoBean dishInfoBean1 = new DishInfoBean();
+        dishInfoBean1.setName("tankaoxueyu");
+        dishInfoBean1.setTypeId("1");
+        dishInfoBean1.setPrice("108");
+        dishInfoBeans.add(dishInfoBean1);
+        DishInfoBean dishInfoBean2 = new DishInfoBean();
+        dishInfoBean2.setName("shengjianqiudaoyu");
+        dishInfoBean2.setTypeId("1");
+        dishInfoBean2.setPrice("66");
+        dishInfoBeans.add(dishInfoBean2);
+        DishInfoBean dishInfoBean3 = new DishInfoBean();
+        dishInfoBean3.setName("xianggudunji");
+        dishInfoBean3.setTypeId("2");
+        dishInfoBean3.setPrice("30");
+        dishInfoBeans.add(dishInfoBean3);
+        DishInfoBean dishInfoBean4 = new DishInfoBean();
+        dishInfoBean4.setName("tangcuixiaren");
+        dishInfoBean4.setTypeId("2");
+        dishInfoBean4.setPrice("48");
+        dishInfoBeans.add(dishInfoBean4);
+        DishInfoBean dishInfoBean5 = new DishInfoBean();
+        dishInfoBean5.setName("sijishishu");
+        dishInfoBean5.setTypeId("3");
+        dishInfoBean5.setPrice("10");
+        dishInfoBeans.add(dishInfoBean5);
+        DishInfoBean dishInfoBean6 = new DishInfoBean();
+        dishInfoBean6.setName("qingchaolusun");
+        dishInfoBean6.setTypeId("3");
+        dishInfoBean6.setPrice("20");
+        dishInfoBeans.add(dishInfoBean6);
+        DishInfoBean dishInfoBean7 = new DishInfoBean();
+        dishInfoBean7.setName("liuliansu");
+        dishInfoBean7.setTypeId("4");
+        dishInfoBean7.setPrice("30");
+        dishInfoBeans.add(dishInfoBean7);
+        DishInfoBean dishInfoBean8 = new DishInfoBean();
+        dishInfoBean8.setName("ningmengdangao");
+        dishInfoBean8.setTypeId("4");
+        dishInfoBean8.setPrice("20");
+        dishInfoBeans.add(dishInfoBean8);
+        DishInfoBean dishInfoBean9 = new DishInfoBean();
+        dishInfoBean9.setName("chivas");
+        dishInfoBean9.setTypeId("5");
+        dishInfoBean9.setPrice("320");
+        dishInfoBeans.add(dishInfoBean9);
+        DishInfoBean dishInfoBean10 = new DishInfoBean();
+        dishInfoBean10.setName("taozui");
+        dishInfoBean10.setTypeId("5");
+        dishInfoBean10.setPrice("120");
+        dishInfoBeans.add(dishInfoBean10);
+        DishInfoBean dishInfoBean11 = new DishInfoBean();
+        dishInfoBean11.setName("niuroumian");
+        dishInfoBean11.setTypeId("6");
+        dishInfoBean11.setPrice("20");
+        dishInfoBeans.add(dishInfoBean11);
+        DishInfoBean dishInfoBean12 = new DishInfoBean();
+        dishInfoBean12.setName("congyoubing");
+        dishInfoBean12.setTypeId("6");
+        dishInfoBean12.setPrice("22");
+        dishInfoBeans.add(dishInfoBean12);
     }
 }
