@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import com.res.ui.adapter.TableAdapter;
 import com.res.view.R;
 
 /**
@@ -32,7 +33,7 @@ public class WelcomeActivity extends Activity {
         enterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WelcomeActivity.this, DishActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, TableActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
