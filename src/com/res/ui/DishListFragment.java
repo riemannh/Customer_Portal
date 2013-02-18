@@ -1,12 +1,21 @@
 package com.res.ui;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.res.beans.DishItem;
+import com.res.beans.DishOrder;
+import com.res.memory.DishMemory;
+import com.res.ui.adapter.DishItemAdapter;
 import com.res.view.R;
 
 /**
@@ -20,94 +29,85 @@ import com.res.view.R;
  */
 public class DishListFragment extends Fragment {
 
+    DishMemory dishMemory;
+
     private ImageButton showMenuBtn;
     private GridView gridView;
+    private Button orderFinishBtn;
+    private Button orderDetailBtn;
+    private DishItemAdapter adapter;
+    private Handler handler;
+    private ProgressDialog progressDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dish, null);
+        dishMemory = DishMemory.getInstance();
         showMenuBtn = (ImageButton) view.findViewById(R.id.show_menu);
+        orderDetailBtn = (Button) view.findViewById(R.id.order_detail);
+        orderFinishBtn = (Button) view.findViewById(R.id.order_finish);
         gridView = (GridView) view.findViewById(R.id.dish_list);
+        handler = new Handler();
         return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        SampleAdapter adapter = new SampleAdapter(getActivity());
-        for (int i = 0; i < 20; i++) {
-            adapter.add(new SampleItem(android.R.drawable.btn_star, "鱼香肉丝", "22"));
-        }
-        gridView.setAdapter(adapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String title = ((TextView) view.findViewById(R.id.row_title1)).getText().toString();
-                Toast.makeText(getActivity(), title, Toast.LENGTH_SHORT).show();
-            }
-        });
+        adapter = new DishItemAdapter(getActivity(), orderDetailBtn);
+        //todo 加载菜单数据
+        loadDishItem();
+
         showMenuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((DishActivity) getActivity()).showMenu();
             }
         });
-    }
 
-    private class SampleItem {
-        private int iconRes;
-        private String tag;
-        private String price;
-
-        public SampleItem(int iconRes, String tag, String price) {
-            this.iconRes = iconRes;
-            this.tag = tag;
-            this.price = price;
-        }
-
-        public int getIconRes() {
-            return iconRes;
-        }
-
-        public void setIconRes(int iconRes) {
-            this.iconRes = iconRes;
-        }
-
-        public String getTag() {
-            return tag;
-        }
-
-        public void setTag(String tag) {
-            this.tag = tag;
-        }
-
-        public String getPrice() {
-            return price;
-        }
-
-        public void setPrice(String price) {
-            this.price = price;
-        }
-    }
-
-    public class SampleAdapter extends ArrayAdapter<SampleItem> {
-
-        public SampleAdapter(Context context) {
-            super(context, 0);
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item, null);
+        //已点按钮
+        orderDetailBtn.setText("已点：" + dishMemory.size());
+        orderDetailBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), OrderFinishActivity.class);
+                intent.setAction("detail");
+                startActivity(intent);
             }
-            ImageView icon1 = (ImageView) convertView.findViewById(R.id.row_icon1);
-            icon1.setImageResource(getItem(position).getIconRes());
-            TextView tag1 = (TextView) convertView.findViewById(R.id.row_title1);
-            tag1.setText(getItem(position).getTag());
-            TextView price = (TextView) convertView.findViewById(R.id.price);
-            price.setText(getItem((position)).getPrice());
-            return convertView;
-        }
+        });
+
+        //完成点餐按钮
+        orderFinishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (dishMemory.isEmpty()) {
+                    new AlertDialog.Builder(getActivity()).setMessage("您尚未点餐！").setPositiveButton("确定", null).show();
+                } else {
+                    Intent intent = new Intent(getActivity(), OrderFinishActivity.class);
+                    intent.setAction("over");
+                    startActivity(intent);
+                }
+            }
+        });
     }
+
+    /**
+     * 加载菜单信息
+     */
+    public void loadDishItem() {
+        progressDialog = ProgressDialog.show(getActivity(), "请稍等...", "菜单获取中...", true);
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                //todo 查询数据库获取数据列表
+                adapter.clear();
+                for (int i = 0; i < 20; i++) {
+                    adapter.add(new DishItem(android.R.drawable.btn_star, "鱼香肉丝", "22"));
+                }
+                gridView.setAdapter(adapter);
+                progressDialog.dismiss();
+                gridView.setAdapter(adapter);
+            }
+        });
+    }
+
 }

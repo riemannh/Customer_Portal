@@ -22,8 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="鱼香肉丝"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:textAppearance="@android:style/TextAppearance.Medium"
                 android:textColor="@android:color/white"/>
@@ -42,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@id/price_tip"
                 android:layout_toRightOf="@id/price_tip"
-                android:text="20"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"/>
@@ -55,5 +53,12 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="@android:color/white"/>
+        <Button android:id="@+id/confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="就点它了"
+                android:textColor="@android:color/white"
+                android:layout_below="@id/price_tip"
+                android:background="@drawable/enter_shape"/>
     </RelativeLayout>
 </LinearLayout>

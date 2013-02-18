@@ -34,10 +34,10 @@ public class DishActivity extends Activity {
         slidingMenu.setDishView(getLayoutInflater().inflate(R.layout.dish_frame, null));
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        menuFragment = new MenuFragment();
-        transaction.replace(R.id.menu_frame, menuFragment);
         dishListFragment = new DishListFragment();
         transaction.replace(R.id.dish_frame, dishListFragment);
+        menuFragment = new MenuFragment(dishListFragment);
+        transaction.replace(R.id.menu_frame, menuFragment);
         transaction.commit();
     }
 
