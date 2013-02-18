@@ -25,8 +25,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         Log.v("SQLiteHelper onCreate", "Creating all the tables");
         try {
-            sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_MENU_INFO);
-            sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_MENU_TYPE);
+            sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_DISH_INFO);
+            sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_DISH_TYPE);
             sqLiteDatabase.execSQL(SQLConstant.CREATE_TABLE_TABLE_INFO);
         } catch (SQLException e) {
             Log.v("Create table exeception ", e.getMessage());
@@ -37,8 +37,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
         String updateLog = "Upgrading from version " + oldVersion + " to " + newVersion + " , which will destory all old data";
         Log.w("TaskDBAdapter", updateLog);
-        sqLiteDatabase.execSQL(SQLConstant.DROP_TABLE_MENU_INFO);
-        sqLiteDatabase.execSQL(SQLConstant.DROP_TABLE_MENU_TYPE);
+        sqLiteDatabase.execSQL(SQLConstant.DROP_TABLE_DISH_INFO);
+        sqLiteDatabase.execSQL(SQLConstant.DROP_TABLE_DISH_TYPE);
         sqLiteDatabase.execSQL(SQLConstant.DROP_TABLE_TABLE_INFO);
         onCreate(sqLiteDatabase);
     }

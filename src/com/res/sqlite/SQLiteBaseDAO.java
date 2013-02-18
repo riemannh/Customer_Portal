@@ -55,24 +55,10 @@ public abstract class SQLiteBaseDAO {
      * 删除所有的表
      */
     public void deleteTables() {
-        database.execSQL(SQLConstant.DROP_TABLE_MENU_INFO);
-        database.execSQL(SQLConstant.DROP_TABLE_MENU_TYPE);
+        database.execSQL(SQLConstant.DROP_TABLE_DISH_INFO);
+        database.execSQL(SQLConstant.DROP_TABLE_DISH_TYPE);
         database.execSQL(SQLConstant.DROP_TABLE_TABLE_INFO);
     }
 
-    /**
-     * 插入数据
-     *
-     * @param abstractBean
-     * @return
-     */
-    public abstract long insert(AbstractBean abstractBean);
-
-    /**
-     * 更新数据
-     * @param abstractBean
-     * @return
-     */
-    public abstract long update(AbstractBean abstractBean);
 
 }

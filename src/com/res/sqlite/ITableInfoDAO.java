@@ -17,10 +17,10 @@ public interface ITableInfoDAO {
     /**
      * 新增桌位信息
      *
-     * @param abstractBean
+     * @param tableInfoBean
      * @return
      */
-    long insert(AbstractBean abstractBean);
+    long insertTableInfo(TableInfoBean tableInfoBean);
 
     /**
      * 批量新增桌位信息
@@ -28,7 +28,7 @@ public interface ITableInfoDAO {
      * @param tableInfoBeans
      * @return
      */
-    boolean insert(List<TableInfoBean> tableInfoBeans);
+    boolean insertTableInfo(List<TableInfoBean> tableInfoBeans);
 
     /**
      * 更新桌位信息
@@ -36,12 +36,12 @@ public interface ITableInfoDAO {
      * @param abstractBean
      * @return
      */
-    long update(AbstractBean abstractBean);
+    long updateTableInfo(AbstractBean abstractBean);
 
     /**
      * 获得所有桌位信息
      *
      * @return
      */
-    public List<TableInfoBean> getAll();
+    public List<TableInfoBean> getAllTableInfo();
 }

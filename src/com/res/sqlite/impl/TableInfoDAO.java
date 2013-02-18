@@ -2,11 +2,13 @@ package com.res.sqlite.impl;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import com.res.beans.AbstractBean;
 import com.res.beans.TableInfoBean;
 import com.res.sqlite.ITableInfoDAO;
 import com.res.sqlite.SQLiteBaseDAO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,10 +28,8 @@ public class TableInfoDAO extends SQLiteBaseDAO implements ITableInfoDAO {
         super(cont);
     }
 
-    @Override
-    public long insert(AbstractBean abstractBean) {
+    public long insertTableInfo(TableInfoBean tableInfoBean) {
         ContentValues contentValues = new ContentValues();
-        TableInfoBean tableInfoBean = (TableInfoBean) abstractBean;
         contentValues.put(TableInfoBean.NAME, tableInfoBean.getName());
         contentValues.put(TableInfoBean.ADDRESS, tableInfoBean.getAddress());
         contentValues.put(TableInfoBean.INFO, tableInfoBean.getInfo());
@@ -38,21 +38,40 @@ public class TableInfoDAO extends SQLiteBaseDAO implements ITableInfoDAO {
         return 0;
     }
 
-    @Override
-    public boolean insert(List<TableInfoBean> tableInfoBeans) {
+    public boolean insertTableInfo(List<TableInfoBean> tableInfoBeans) {
         for (TableInfoBean tableInfoBean : tableInfoBeans) {
-            insert(tableInfoBean);
+            insertTableInfo(tableInfoBean);
         }
         return true;
     }
 
-    @Override
-    public long update(AbstractBean abstractBean) {
+    public long updateTableInfo(AbstractBean abstractBean) {
         return 0;
     }
 
-    public List<TableInfoBean> getAll() {
-        database.query(TableInfoBean.TABLE_NAME, null, null, null, null, null, TableInfoBean.ID + " DESC");
-        return null;
+    /**
+     * "CREATE TABLE table_info" +
+     * "(" +
+     * "id  Varchar2  not null," +
+     * "name  Varchar2  not null," +
+     * "address  Varchar2  null," +
+     * "info  Varchar2  null," +
+     * "Status  Varchar2 null" +
+     * ")";
+     *
+     * @return
+     */
+    public List<TableInfoBean> getAllTableInfo() {
+        Cursor cursor = database.query(TableInfoBean.TABLE_NAME, null, null, null, null, null, TableInfoBean.ID + " DESC");
+        List<TableInfoBean> tableInfoBeans = new ArrayList<TableInfoBean>();
+        for (TableInfoBean tableInfoBean : tableInfoBeans) {
+            tableInfoBean.setInfo(cursor.getString(0));
+            tableInfoBean.setName(cursor.getString(1));
+            tableInfoBean.setAddress(cursor.getString(2));
+            tableInfoBean.setInfo(cursor.getString(3));
+            tableInfoBean.setStatus(cursor.getString(4));
+            tableInfoBeans.add(tableInfoBean);
+        }
+        return tableInfoBeans;
     }
 }
