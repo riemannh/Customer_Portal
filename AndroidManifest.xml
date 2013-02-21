@@ -46,5 +46,6 @@
         </activity>
         <activity android:name="com.res.ui.DishActivity"/>
         <activity android:name="com.res.ui.OrderFinishActivity"/>
+        <activity android:name="com.res.ui.TableActivity"/>
     </application>
 </manifest>

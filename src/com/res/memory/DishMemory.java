@@ -18,6 +18,12 @@ public final class DishMemory {
 
     private static DishMemory dishMemory = new DishMemory();
 
+    //桌号
+    private static String tableNo;
+
+    //订单号
+    private static String orderSeq;
+
     private DishMemory() {
         dishOrderMap = new HashMap<String, DishOrder>();
     }
@@ -118,6 +124,23 @@ public final class DishMemory {
             totalCost += dishOrder.getPrice() * dishOrder.getCount();
         }
         return totalCost;
+    }
+
+    public void selectTable(String tableNo) {
+        DishMemory.tableNo = tableNo;
+        DishMemory.orderSeq = String.valueOf(System.currentTimeMillis());
+    }
+
+    public String getOrderSeq() {
+        return DishMemory.orderSeq;
+    }
+
+    public String getTableNo() {
+        return DishMemory.tableNo;
+    }
+
+    public void delete(String name) {
+        dishOrderMap.remove(name);
     }
 
     /**

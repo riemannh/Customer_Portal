@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import com.res.beans.DishOrder;
 import com.res.memory.DishMemory;
+import com.res.ui.adapter.OrderListAdapter;
 import com.res.view.R;
 import com.res.view.Success;
 
@@ -51,9 +53,11 @@ public class OrderFinishActivity extends Activity {
         loadDishOrderList();
     }
 
-    private void loadDishOrderList() {
-        SimpleAdapter adapter = new SimpleAdapter(this, dishMemory.listDishOrderMap(), R.layout.order_list_item,
-                new String[]{"name", "count"}, new int[]{R.id.order_list_item1, R.id.order_list_item2});
+    public void loadDishOrderList() {
+        OrderListAdapter adapter = new OrderListAdapter(this);
+        for (DishOrder dishOrder : dishMemory.listDishOrder()) {
+            adapter.add(dishOrder);
+        }
         finishOrderList.setAdapter(adapter);
         totalCost.setText("共消费：" + dishMemory.totalCost() + "元");
     }
