@@ -1,7 +1,7 @@
 package com.res.data;
 
-import com.res.beans.DishInfoBean;
-import com.res.beans.DishTypeBean;
+import com.res.pojo.DishInfoBean;
+import com.res.pojo.DishTypeBean;
 
 import java.util.ArrayList;
 import java.util.List;

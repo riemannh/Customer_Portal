@@ -1,8 +1,8 @@
 package com.res.data;
 
 import android.content.Context;
-import com.res.beans.DishInfoBean;
-import com.res.beans.DishTypeBean;
+import com.res.pojo.DishInfoBean;
+import com.res.pojo.DishTypeBean;
 import com.res.sqlite.IDishInfoDAO;
 import com.res.sqlite.IDishTypeDAO;
 import com.res.sqlite.impl.DishInfoDAO;

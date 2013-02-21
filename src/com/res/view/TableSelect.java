@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.res.beans.TableInfoBean;
+import com.res.pojo.TableInfoBean;
 import com.res.sqlite.impl.TableInfoDAO;
 
 import java.util.ArrayList;
@@ -39,9 +39,9 @@ public class TableSelect extends Activity {
             tableInfoBeanList.add(tableInfoBean);
         }
 
-        tableInfoDAO.insert(tableInfoBeanList);
+        tableInfoDAO.insertTableInfo(tableInfoBeanList);
 
-        List<TableInfoBean> gettedTables = tableInfoDAO.getAll();
+        List<TableInfoBean> gettedTables = tableInfoDAO.getAllTableInfo();
 
         int id = 1;
         for (TableInfoBean tableInfoBean : gettedTables) {

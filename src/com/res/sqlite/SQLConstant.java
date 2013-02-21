@@ -42,9 +42,23 @@ public class SQLConstant {
             "info  Varchar2  null," +
             "Status  Varchar2 null" +
             ")";
+    /**
+     * status 订单状态 1.预定；2，下单；3，完成；4，取消
+     */
+    public static final String CREATE_TABLE_ORDER_INFO = "CREATE TABLE order_info" +
+            "(" +
+            "id Varchar2  not null," +
+            "table_id  Varchar2  not null," +
+            "total_price Varchar2  not null," +
+            "dish_id Varchar2  not null," +
+            "count Varchar2 not null" +
+            "create_time date not null," +
+            "status Varchar2  not null" +
+            ")";
 
     //删除表格语句
     public static final String DROP_TABLE_DISH_INFO = "DROP TABLE DISH_INFO";
     public static final String DROP_TABLE_DISH_TYPE = "DROP TABLE DISH_TYPE";
     public static final String DROP_TABLE_TABLE_INFO = "DROP TABLE TABLE_INFO";
+    public static final String DROP_TABLE_ORDER_INFO = "DROP TABLE ORDER_INFO";
 }

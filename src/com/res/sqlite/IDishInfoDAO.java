@@ -1,6 +1,6 @@
 package com.res.sqlite;
 
-import com.res.beans.DishInfoBean;
+import com.res.pojo.DishInfoBean;
 
 import java.util.List;
 

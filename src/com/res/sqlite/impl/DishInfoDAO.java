@@ -3,7 +3,7 @@ package com.res.sqlite.impl;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import com.res.beans.DishInfoBean;
+import com.res.pojo.DishInfoBean;
 import com.res.sqlite.IDishInfoDAO;
 import com.res.sqlite.SQLiteBaseDAO;
 

@@ -3,8 +3,8 @@ package com.res.sqlite.impl;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import com.res.beans.AbstractBean;
-import com.res.beans.TableInfoBean;
+import com.res.pojo.AbstractBean;
+import com.res.pojo.TableInfoBean;
 import com.res.sqlite.ITableInfoDAO;
 import com.res.sqlite.SQLiteBaseDAO;
 

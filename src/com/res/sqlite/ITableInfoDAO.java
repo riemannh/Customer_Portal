@@ -1,7 +1,7 @@
 package com.res.sqlite;
 
-import com.res.beans.AbstractBean;
-import com.res.beans.TableInfoBean;
+import com.res.pojo.AbstractBean;
+import com.res.pojo.TableInfoBean;
 
 import java.util.List;
 
