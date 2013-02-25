@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import com.res.memory.DishMemory;
+import com.res.sqlite.DishOrderCleaner;
 import com.res.ui.WelcomeActivity;
 
 /**
@@ -45,6 +46,7 @@ public class Success extends Activity {
                 Intent intent = new Intent(Success.this, WelcomeActivity.class);
                 startActivity(intent);
                 finish();
+                DishOrderCleaner.startCleanerThread(Success.this);        //todo
             }
         });
     }

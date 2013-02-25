@@ -52,7 +52,7 @@ public class SQLConstant {
             "total_price Varchar2  not null," +
             "dish_id Varchar2  not null," +
             "count Varchar2 not null" +
-            "create_time date not null," +
+            "create_time Varchar2 not null," +
             "status Varchar2  not null" +
             ")";
 

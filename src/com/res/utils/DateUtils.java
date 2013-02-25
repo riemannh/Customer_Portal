@@ -18,10 +18,17 @@ public class DateUtils {
     public static final String DATE_FORMAT_14 = "yyyy_MM-dd hh:mm:ss";
 
     public static String date2String(Date date, String dateFormat) {
+        date = new Date();
+        System.out.println(date.toString().substring(11, 13));
         return null;
     }
 
     public static Date string2Date(String date, String dateFormat) {
         return null;
+    }
+
+
+    public static void main(String[] args) {
+        DateUtils.date2String(null, null);
     }
 }

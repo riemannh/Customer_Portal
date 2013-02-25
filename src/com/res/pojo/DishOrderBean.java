@@ -1,5 +1,7 @@
 package com.res.pojo;
 
+import java.util.Date;
+
 /**
  * Created with IntelliJ IDEA.
  * User: haoguanghao
@@ -30,7 +32,7 @@ public class DishOrderBean extends AbstractBean {
     private String totalPrice;
     private String dishId;
     private String count;
-    private String createTime;
+    private Date createTime;
     private String status;
 
     public String getTableId() {
@@ -65,11 +67,11 @@ public class DishOrderBean extends AbstractBean {
         this.count = count;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
