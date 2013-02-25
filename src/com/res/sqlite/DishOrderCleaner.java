@@ -16,9 +16,7 @@ public class DishOrderCleaner extends Thread {
 
     private static Context context = null;
 
-    protected IDishOrderDAO dishOrderDAO = new DishOrderDAO(context);
-
-    private static DishOrderCleaner cleanerThread;
+    private static DishOrderCleaner cleanerThread = null;
 
     /**
      * 重写构造方法
@@ -51,6 +49,7 @@ public class DishOrderCleaner extends Thread {
             Date currentDate = new Date();
             String currentHour = currentDate.toString().substring(11, 13);
             if ("07".equals(currentHour)) {
+                IDishOrderDAO dishOrderDAO = new DishOrderDAO(context);
                 dishOrderDAO.deleteDishOrderListAll();
             }
 
