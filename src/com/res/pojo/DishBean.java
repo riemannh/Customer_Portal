@@ -1,8 +1,8 @@
-package com.res.beans;
+package com.res.pojo;
 
 /**
  * Created with IntelliJ IDEA.
- * User: Welcome
+ * User: haoguanghao
  * Date: 13-2-16
  * Time: 下午9:32
  * To change this template use File | Settings | File Templates.

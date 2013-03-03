@@ -1,4 +1,4 @@
-package com.res.beans;
+package com.res.pojo;
 
 /**
  * Created with IntelliJ IDEA.

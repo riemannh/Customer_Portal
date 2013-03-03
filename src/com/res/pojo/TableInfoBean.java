@@ -1,6 +1,4 @@
-package com.res.beans;
-
-import java.io.Serializable;
+package com.res.pojo;
 
 /**
  * Class Descriptions.

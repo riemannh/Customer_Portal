@@ -1,6 +1,6 @@
 package com.res.beans;
 
-import java.io.Serializable;
+import com.res.pojo.AbstractBean;
 
 /**
  * <p>
@@ -12,9 +12,8 @@ import java.io.Serializable;
  * version: v1.0
  * since: v1.0
  */
-public class DishOrder implements Serializable {
-    private String id;
-    private String name;
+public class DishOrder extends AbstractBean {
+
     private double price;
     private int count;
 
@@ -22,22 +21,6 @@ public class DishOrder implements Serializable {
         this.name = name;
         this.price = price;
         this.count = count;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public double getPrice() {

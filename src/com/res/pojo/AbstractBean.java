@@ -1,4 +1,4 @@
-package com.res.beans;
+package com.res.pojo;
 
 import java.io.Serializable;
 
