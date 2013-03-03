@@ -23,7 +23,7 @@ public class DataInsert {
      *
      * @param context
      */
-    public void InsertTestData(Context context) {
+    public void insertTestData(Context context) {
         DataPrepare dataPrepare = new DataPrepare();
         List<DishTypeBean> dishTypeBeans = dataPrepare.getDishTypeBeans();
         List<DishInfoBean> dishInfoBeans = dataPrepare.getDishInfoBeans();

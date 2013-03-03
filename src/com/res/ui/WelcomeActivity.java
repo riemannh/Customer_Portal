@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import com.res.data.DataInsert;
+import com.res.sqlite.IDishInfoDAO;
+import com.res.sqlite.impl.DishInfoDAO;
 import com.res.ui.adapter.TableAdapter;
 import com.res.view.R;
 
@@ -23,6 +26,8 @@ public class WelcomeActivity extends Activity {
 
     private Button enterBtn;
 
+    private IDishInfoDAO dishInfoDAO;
+
     public void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -38,5 +43,18 @@ public class WelcomeActivity extends Activity {
                 overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
             }
         });
+
+        dishInfoDAO = new DishInfoDAO(this);
+        loadDishInfoOnStart();
+    }
+
+    /**
+     * 加载菜单信息
+     */
+    private void loadDishInfoOnStart() {
+        if (dishInfoDAO.getDishInfoCount() == 0) {
+            DataInsert dataInsert = new DataInsert();
+            dataInsert.insertTestData(this);
+        }
     }
 }

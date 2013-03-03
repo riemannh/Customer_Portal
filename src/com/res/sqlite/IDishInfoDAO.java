@@ -20,4 +20,8 @@ public interface IDishInfoDAO {
     void updateDishInfo(DishInfoBean dishInfoBean);
 
     List<DishInfoBean> getAllDishInfo();
+
+    int getDishInfoCount();
+
+    List<DishInfoBean> queryDishInfoList(int type);
 }

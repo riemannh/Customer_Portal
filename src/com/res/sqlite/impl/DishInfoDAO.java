@@ -66,7 +66,7 @@ public class DishInfoDAO extends SQLiteBaseDAO implements IDishInfoDAO {
      * @return
      */
     public List<DishInfoBean> getAllDishInfo() {
-        Cursor cursor = database.query(DishInfoBean.TABLE_NAME, null, null, null, null, null, DishInfoBean.ID + " DESC");
+        Cursor cursor = getDishInfoCursor();
         List<DishInfoBean> dishInfoBeans = new ArrayList<DishInfoBean>();
         for (DishInfoBean dishInfoBean : dishInfoBeans) {
             dishInfoBean.setId(cursor.getString(0));
@@ -82,5 +82,53 @@ public class DishInfoDAO extends SQLiteBaseDAO implements IDishInfoDAO {
             dishInfoBeans.add(dishInfoBean);
         }
         return dishInfoBeans;
+    }
+
+    /**
+     * 查询列表数量
+     *
+     * @return
+     */
+    public int getDishInfoCount() {
+        Cursor cursor = getDishInfoCursor();
+        return cursor.getCount();
+    }
+
+    /**
+     * 根据type查询菜单列表
+     *
+     * @param type 菜品类型
+     * @return
+     */
+    public List<DishInfoBean> queryDishInfoList(int type) {
+        Cursor cursor =
+                database.query(DishInfoBean.TABLE_NAME, null, DishInfoBean.DISH_TYPE + "=" + type, null, null, null,
+                        null);
+        List<DishInfoBean> dishInfoList = new ArrayList<DishInfoBean>();
+        DishInfoBean dishInfoBean;
+        for (int i = 0; i < cursor.getCount(); i++) {
+            dishInfoBean = new DishInfoBean();
+            dishInfoBean.setId(cursor.getString(0));
+            dishInfoBean.setName(cursor.getString(1));
+            dishInfoBean.setTypeId(cursor.getString(2));
+            dishInfoBean.setPrice(cursor.getString(3));
+            dishInfoBean.setDiscount(cursor.getString(4));
+            dishInfoBean.setNote(cursor.getString(5));
+            dishInfoBean.setSmallPictureAddress(cursor.getString(6));
+            dishInfoBean.setBigPictureAddress(cursor.getString(7));
+            dishInfoBean.setVideoAddress(cursor.getString(8));
+            dishInfoBean.setAudioAddress(cursor.getString(9));
+            dishInfoList.add(dishInfoBean);
+        }
+        return dishInfoList;
+    }
+
+    /**
+     * 查询菜单信息Cursor对象
+     *
+     * @return
+     */
+    private Cursor getDishInfoCursor() {
+        return database.query(DishInfoBean.TABLE_NAME, null, null, null, null, null, DishInfoBean.ID + " DESC");
     }
 }

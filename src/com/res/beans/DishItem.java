@@ -1,5 +1,7 @@
 package com.res.beans;
 
+import android.graphics.Bitmap;
+
 /**
  * <p>
  * </p>
@@ -10,21 +12,21 @@ package com.res.beans;
  * since: v1.0
  */
 public class DishItem {
-    private int iconRes;
+    private Bitmap iconRes;
     private String tag;
     private String price;
 
-    public DishItem(int iconRes, String tag, String price) {
+    public DishItem(Bitmap iconRes, String tag, String price) {
         this.iconRes = iconRes;
         this.tag = tag;
         this.price = price;
     }
 
-    public int getIconRes() {
+    public Bitmap getIconRes() {
         return iconRes;
     }
 
-    public void setIconRes(int iconRes) {
+    public void setIconRes(Bitmap iconRes) {
         this.iconRes = iconRes;
     }
 

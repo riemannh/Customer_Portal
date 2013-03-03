@@ -39,7 +39,7 @@ public class DishItemAdapter extends ArrayAdapter<DishItem> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item, null);
         }
         ImageView icon1 = (ImageView) convertView.findViewById(R.id.row_icon1);
-        icon1.setImageResource(getItem(position).getIconRes());
+        icon1.setImageBitmap(getItem(position).getIconRes());
         final TextView tag1 = (TextView) convertView.findViewById(R.id.row_title1);
         tag1.setText(getItem(position).getTag());
         final TextView priceText = (TextView) convertView.findViewById(R.id.price);

@@ -58,8 +58,8 @@ public class MenuFragment extends Fragment {
     /**
      * 加载菜品页面
      */
-    public void loadDishView() {
-        dishListFragment.loadDishItem();
+    public void loadDishView(String type) {
+        dishListFragment.loadDishItem(type);
     }
 
 }
@@ -76,8 +76,7 @@ class MenuClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        //TODO查询加载列表
-        menuFragment.loadDishView();
+        menuFragment.loadDishView(menuType);
         ((DishActivity) menuFragment.getActivity()).showMenu();
     }
 }
