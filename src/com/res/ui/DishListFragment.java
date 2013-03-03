@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import com.res.beans.DishInfoBean;
 import com.res.beans.DishItem;
 import com.res.memory.DishMemory;
 import com.res.memory.DishPicCache;
+import com.res.pojo.DishInfoBean;
 import com.res.sqlite.IDishInfoDAO;
 import com.res.sqlite.impl.DishInfoDAO;
 import com.res.ui.adapter.DishItemAdapter;
@@ -56,7 +56,7 @@ public class DishListFragment extends Fragment {
         gridView = (GridView) view.findViewById(R.id.dish_list);
         handler = new Handler();
         dishInfoDAO = new DishInfoDAO(getActivity());
-        picCache = DishPicCache.getInstance();
+        picCache = DishPicCache.getInstance(getActivity());
         return view;
     }
 
@@ -107,11 +107,10 @@ public class DishListFragment extends Fragment {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                //todo 查询数据库获取数据列表
                 adapter.clear();
                 List<DishInfoBean> dishInfoList = dishInfoDAO.queryDishInfoList(1);
                 for (DishInfoBean dishInfoBean : dishInfoList) {
-                    adapter.add(new DishItem(picCache.getDishPicture(dishInfoBean.getSmallPictureAddress()),
+                    adapter.add(new DishItem(picCache.get(dishInfoBean.getSmallPictureAddress()),
                             dishInfoBean.getName(), dishInfoBean.getPrice()));
                 }
                 gridView.setAdapter(adapter);
