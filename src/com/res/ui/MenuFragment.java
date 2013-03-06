@@ -47,18 +47,18 @@ public class MenuFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        famousBtn.setOnClickListener(new MenuClickListener(this, "0"));
-        hotBtn.setOnClickListener(new MenuClickListener(this, "1"));
-        coldBtn.setOnClickListener(new MenuClickListener(this, "2"));
-        dessertBtn.setOnClickListener(new MenuClickListener(this, "3"));
-        stapleBtn.setOnClickListener(new MenuClickListener(this, "4"));
-        drinkBtn.setOnClickListener(new MenuClickListener(this, "5"));
+        famousBtn.setOnClickListener(new MenuClickListener(this, 1));
+        hotBtn.setOnClickListener(new MenuClickListener(this, 2));
+        coldBtn.setOnClickListener(new MenuClickListener(this, 3));
+        dessertBtn.setOnClickListener(new MenuClickListener(this, 4));
+        stapleBtn.setOnClickListener(new MenuClickListener(this, 6));
+        drinkBtn.setOnClickListener(new MenuClickListener(this, 5));
     }
 
     /**
      * 加载菜品页面
      */
-    public void loadDishView(String type) {
+    public void loadDishView(int type) {
         dishListFragment.loadDishItem(type);
     }
 
@@ -67,9 +67,9 @@ public class MenuFragment extends Fragment {
 class MenuClickListener implements View.OnClickListener {
 
     private MenuFragment menuFragment;
-    private String menuType;
+    private int menuType;
 
-    public MenuClickListener(MenuFragment menuFragment, String menuType) {
+    public MenuClickListener(MenuFragment menuFragment, int menuType) {
         this.menuFragment = menuFragment;
         this.menuType = menuType;
     }

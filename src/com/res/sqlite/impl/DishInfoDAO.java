@@ -29,6 +29,7 @@ public class DishInfoDAO extends SQLiteBaseDAO implements IDishInfoDAO {
 
     public void insertDishInfo(DishInfoBean dishInfoBean) {
         ContentValues contentValues = new ContentValues();
+        contentValues.put(DishInfoBean.ID, dishInfoBean.getId());
         contentValues.put(DishInfoBean.NAME, dishInfoBean.getName());
         contentValues.put(DishInfoBean.DISH_TYPE, dishInfoBean.getTypeId());
         contentValues.put(DishInfoBean.PRICE, dishInfoBean.getPrice());
@@ -107,18 +108,20 @@ public class DishInfoDAO extends SQLiteBaseDAO implements IDishInfoDAO {
         List<DishInfoBean> dishInfoList = new ArrayList<DishInfoBean>();
         DishInfoBean dishInfoBean;
         for (int i = 0; i < cursor.getCount(); i++) {
-            dishInfoBean = new DishInfoBean();
-            dishInfoBean.setId(cursor.getString(0));
-            dishInfoBean.setName(cursor.getString(1));
-            dishInfoBean.setTypeId(cursor.getString(2));
-            dishInfoBean.setPrice(cursor.getString(3));
-            dishInfoBean.setDiscount(cursor.getString(4));
-            dishInfoBean.setNote(cursor.getString(5));
-            dishInfoBean.setSmallPictureAddress(cursor.getString(6));
-            dishInfoBean.setBigPictureAddress(cursor.getString(7));
-            dishInfoBean.setVideoAddress(cursor.getString(8));
-            dishInfoBean.setAudioAddress(cursor.getString(9));
-            dishInfoList.add(dishInfoBean);
+            if (cursor.moveToNext()) {
+                dishInfoBean = new DishInfoBean();
+                dishInfoBean.setId(cursor.getString(0));
+                dishInfoBean.setName(cursor.getString(1));
+                dishInfoBean.setTypeId(cursor.getString(2));
+                dishInfoBean.setPrice(cursor.getString(3));
+                dishInfoBean.setDiscount(cursor.getString(4));
+                dishInfoBean.setNote(cursor.getString(5));
+                dishInfoBean.setSmallPictureAddress(cursor.getString(6));
+                dishInfoBean.setBigPictureAddress(cursor.getString(7));
+                dishInfoBean.setVideoAddress(cursor.getString(8));
+                dishInfoBean.setAudioAddress(cursor.getString(9));
+                dishInfoList.add(dishInfoBean);
+            }
         }
         return dishInfoList;
     }

@@ -26,6 +26,7 @@ public abstract class SQLiteBaseDAO {
     public SQLiteBaseDAO(Context cont) {
         this.context = cont;
         dbHelper = new SQLiteHelper(context, SQLConstant.DATABASE_NAME, null, SQLConstant.DATABASE_VERSION);
+        open();
     }
 
 

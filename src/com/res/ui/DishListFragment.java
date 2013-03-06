@@ -4,8 +4,10 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +67,7 @@ public class DishListFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         adapter = new DishItemAdapter(getActivity(), orderDetailBtn);
 
-        loadDishItem("1");
+        loadDishItem(1);
 
         showMenuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,15 +104,16 @@ public class DishListFragment extends Fragment {
     /**
      * 加载菜单信息
      */
-    public void loadDishItem(String type) {
+    public void loadDishItem(final int type) {
         progressDialog = ProgressDialog.show(getActivity(), "请稍等...", "菜单获取中...", true);
         handler.post(new Runnable() {
             @Override
             public void run() {
                 adapter.clear();
-                List<DishInfoBean> dishInfoList = dishInfoDAO.queryDishInfoList(1);
+                List<DishInfoBean> dishInfoList = dishInfoDAO.queryDishInfoList(type);
                 for (DishInfoBean dishInfoBean : dishInfoList) {
-                    adapter.add(new DishItem(picCache.get(dishInfoBean.getSmallPictureAddress()),
+                    Bitmap bitmap = picCache.get(dishInfoBean.getSmallPictureAddress());
+                    adapter.add(new DishItem(bitmap,
                             dishInfoBean.getName(), dishInfoBean.getPrice()));
                 }
                 gridView.setAdapter(adapter);

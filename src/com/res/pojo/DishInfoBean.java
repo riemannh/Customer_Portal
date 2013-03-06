@@ -24,7 +24,7 @@ public class DishInfoBean extends DishBean {
      * ")"
      */
 
-    public static final String TABLE_NAME = "dish_info";
+    public static final String TABLE_NAME = "DISH_INFO";
     public static final String DISH_TYPE = "type_id";
     public static final String PRICE = "price";
     public static final String DISCOUNT = "discount";

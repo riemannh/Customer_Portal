@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.Log;
 import android.util.LruCache;
 import com.res.view.R;
@@ -57,13 +58,20 @@ public final class DishPicCache {
     };
 
     private static Context context;
+
+    private static File cacheDir;
+
     //todo 联网之后不需要初始化缓存
     static int[] dishReses =
             {R.drawable.tankaoxueyu, R.drawable.shengjianqiudaoyu, R.drawable.xianggudunji,
                     R.drawable.tangcuixiaren, R.drawable.sijishishu, R.drawable.qingchaolusun, R.drawable.liuliansu,
                     R.drawable.ningmengdangao, R.drawable.chivas, R.drawable.taozui, R.drawable.niuroumian,
                     R.drawable.congyoubing};
-    static String[] resourceNames = {};
+    static String[] resourceNames =
+            {"tankaoxueyu.jpg", "shengjianqiudaoyu.jpg", "xianggudunji.jpg", "tangcuixiaren.jpg", "sijishishu.jpg",
+                    "qingchaolusun.jpg",
+                    "liuliansu.jpg", "ningmengdangao.jpg",
+                    "chivas.jpg", "taozui.jpg", "niuroumian.jpg", "congyoubing.jpg"};
 
     private DishPicCache() {
 
@@ -71,11 +79,13 @@ public final class DishPicCache {
 
     public static DishPicCache getInstance(Context context) {
         DishPicCache.context = context;
+        cacheDir = context.getCacheDir();
         Resources resources = context.getResources();
-        if (dishPicCache.fileCache.size() == 0) {
-            for (int i = 0; i < dishReses.length; i++) {
-                dishPicCache.putToFile(resourceNames[i], BitmapFactory.decodeResource(resources, dishReses[i]));
-            }
+        InputStream is;
+        for (int i = 0; i < dishReses.length; i++) {
+            is = resources.openRawResource(dishReses[i]);
+            Bitmap bitmap = new BitmapDrawable(resources, is).getBitmap();
+            dishPicCache.putToFile(resourceNames[i], bitmap);
         }
         return dishPicCache;
     }
@@ -109,12 +119,19 @@ public final class DishPicCache {
                 }
             }
         }
-        //TODO 从网上下载图片
+
+        Bitmap bitmap3 = getFromFile(key);
+        if (bitmap3 != null) {
+            return bitmap3;
+        } else {
+            //TODO 从网上下载图片
+        }
+
         return null;
     }
 
     private static final int MAX_FILE_CACHE_SIZE = 20 * 1024 * 1024;
-    private File cacheDir = context.getCacheDir();
+
     private final LruCache<String, Long> fileCache = new LruCache<String, Long>(MAX_FILE_CACHE_SIZE) {
         @Override
         protected int sizeOf(String key, Long value) {
@@ -124,21 +141,17 @@ public final class DishPicCache {
         @Override
         protected void entryRemoved(boolean evicted, String key, Long oldValue, Long newValue) {
             File file = null;
-            try {
-                file = getFile(key);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+            file = getFile(key);
             if (file != null) {
                 file.delete();
             }
         }
     };
 
-    private File getFile(String filename) throws FileNotFoundException {
+    private File getFile(String filename) {
         File file = new File(cacheDir, filename);
         if (!file.exists() || !file.isFile()) {
-            throw new FileNotFoundException("File not found or has the same name directory");
+            return null;
         }
         return file;
     }
@@ -146,11 +159,14 @@ public final class DishPicCache {
     public boolean putToFile(String key, Bitmap bitmap) {
         boolean saved = false;
         try {
+            hardBitmapCache.put(key, bitmap);
             File file = getFile(key);
             if (file != null) {
                 Log.v("tag", "file already exists");
+                fileCache.put(key, file.length());
                 return true;
             }
+
             FileOutputStream fos = getOutputStream(key);
             saved = bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos);
             fos.flush();
