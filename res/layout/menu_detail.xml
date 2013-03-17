@@ -2,26 +2,44 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
-
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
     <WebView android:id="@+id/flash"
              android:layout_height="wrap_content"
              android:layout_width="wrap_content"
-             android:layout_marginTop="100dp"/>
-
-    <Button android:id="@+id/detail_back"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="600dp"
-            android:layout_marginLeft="200dp"
-            android:text="@string/back"
-            android:textSize="30dp"
-            android:background="@drawable/bluebutton"/>
-    <Button android:id="@+id/detail_submit"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="600dp"
-            android:text="@string/submit"
-            android:textSize="30dp"
-            android:background="@drawable/button"/>
+             android:layout_margin="50dp"
+             android:layout_gravity="center"/>
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="菜品名称"
+                  android:textSize="50dp"
+                  android:id="@+id/dishName"/>
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="wrap_content"
+                  android:text="价格"
+                  android:layout_marginLeft="400dp"
+                  android:textSize="30dp"
+                  android:id="@+id/dishPrice"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:gravity="center_horizontal">
+        <Button android:id="@+id/detail_back"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/back"
+                android:textSize="30dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/bluebutton"/>
+        <Button android:id="@+id/detail_submit"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/submit"
+                android:textSize="30dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button"/>
+    </LinearLayout>
 </LinearLayout>

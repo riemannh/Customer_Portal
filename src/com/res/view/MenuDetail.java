@@ -1,11 +1,12 @@
 package com.res.view;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.webkit.WebSettings;
+import android.view.View;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * <一句话功能简述>
@@ -23,34 +24,32 @@ public class MenuDetail extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_detail);
-        createFlashView(getString(R.string.test_flash));
-        //       createWebViewDemo(flashView);
-    }
+        Intent intent = getIntent();
+        String dishName = intent.getStringExtra("dishName");
+        String price = intent.getStringExtra("price");
+        String flashPath = intent.getStringExtra("flashPath");
 
-    /**
-     * 创建用于播放flash的WebView
-     *
-     * @param flashName
-     */
-    private void createFlashView(String flashName) {
         final WebView flashView = (WebView) findViewById(R.id.flash);
-        WebViewClient webViewClient = new WebViewClient();
-        webViewClient.onLoadResource(flashView, flashName);
-        flashView.setWebViewClient(webViewClient);
-        WebSettings webSettings = flashView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        TextView dishNameView = (TextView) findViewById(R.id.dishName);
+        TextView dishPriceView = (TextView) findViewById(R.id.dishPrice);
+
+        Button backButton = (Button) findViewById(R.id.detail_back);
+        Button submitButton = (Button) findViewById(R.id.detail_submit);
+
+        flashView.getSettings().setJavaScriptEnabled(true);
+        flashView.getSettings().setPluginsEnabled(true);
+        flashView.loadUrl(flashPath);
+        dishNameView.setText(dishName);
+        dishPriceView.setText(price);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent submitIntent = new Intent();
+                submitIntent.setClass(this,null);
+            }
+        });
+
     }
 
-    private void createWebViewDemo(final WebView flashView) {
-        final Handler mHandler = new Handler();
-        flashView.addJavascriptInterface(new Object() {
-            public void clickOnAndroid() {
-                mHandler.post(new Runnable() {
-                    public void run() {
-                        flashView.loadUrl("javascript:wave()");
-                    }
-                });
-            }
-        }, "flash");
-    }
 }
