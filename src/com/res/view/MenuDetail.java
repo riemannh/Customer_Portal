@@ -24,8 +24,8 @@ public class MenuDetail extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_detail);
-        Intent intent = getIntent();
-        String dishName = intent.getStringExtra("dishName");
+        final Intent intent = getIntent();
+        final String dishName = intent.getStringExtra("dishName");
         String price = intent.getStringExtra("price");
         String flashPath = intent.getStringExtra("flashPath");
 
@@ -34,7 +34,7 @@ public class MenuDetail extends Activity {
         TextView dishPriceView = (TextView) findViewById(R.id.dishPrice);
 
         Button backButton = (Button) findViewById(R.id.detail_back);
-        Button submitButton = (Button) findViewById(R.id.detail_submit);
+        final Button submitButton = (Button) findViewById(R.id.detail_submit);
 
         flashView.getSettings().setJavaScriptEnabled(true);
         flashView.getSettings().setPluginsEnabled(true);
@@ -46,10 +46,20 @@ public class MenuDetail extends Activity {
             @Override
             public void onClick(View view) {
                 Intent submitIntent = new Intent();
-                submitIntent.setClass(this,null);
+                //todo     submitIntent.setClass(this,null);
+
+                submitIntent.putExtra("dishName", dishName);
+                startActivity(submitIntent);
+                finish();
             }
         });
 
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
 }
