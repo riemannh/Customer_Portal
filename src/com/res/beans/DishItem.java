@@ -15,9 +15,16 @@ public class DishItem {
     private Bitmap iconRes;
     private String tag;
     private String price;
+    private int res;
 
     public DishItem(Bitmap iconRes, String tag, String price) {
         this.iconRes = iconRes;
+        this.tag = tag;
+        this.price = price;
+    }
+
+    public DishItem(int res, String tag, String price) {
+        this.res = res;
         this.tag = tag;
         this.price = price;
     }
@@ -44,5 +51,13 @@ public class DishItem {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public int getRes() {
+        return res;
+    }
+
+    public void setRes(int res) {
+        this.res = res;
     }
 }

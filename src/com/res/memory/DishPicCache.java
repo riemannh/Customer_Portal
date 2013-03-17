@@ -99,6 +99,15 @@ public final class DishPicCache {
         return false;
     }
 
+    public int getPicRes(String key) {
+        for (int i = 0; i < resourceNames.length; i++) {
+            if (resourceNames[i].equals(key)) {
+                return dishReses[i];
+            }
+        }
+        return -1;
+    }
+
     public Bitmap get(String key) {
         synchronized (hardBitmapCache) {
             final Bitmap bitmap = hardBitmapCache.get(key);

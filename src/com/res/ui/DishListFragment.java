@@ -112,8 +112,9 @@ public class DishListFragment extends Fragment {
                 adapter.clear();
                 List<DishInfoBean> dishInfoList = dishInfoDAO.queryDishInfoList(type);
                 for (DishInfoBean dishInfoBean : dishInfoList) {
-                    Bitmap bitmap = picCache.get(dishInfoBean.getSmallPictureAddress());
-                    adapter.add(new DishItem(bitmap,
+                    //Bitmap bitmap = picCache.get(dishInfoBean.getSmallPictureAddress());
+                    int picRes = picCache.getPicRes(dishInfoBean.getSmallPictureAddress());
+                    adapter.add(new DishItem(picRes,
                             dishInfoBean.getName(), dishInfoBean.getPrice()));
                 }
                 gridView.setAdapter(adapter);
