@@ -1,5 +1,6 @@
 package com.res.ui;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.ProgressDialog;
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 import com.res.beans.DishItem;
 import com.res.memory.DishMemory;
 import com.res.memory.DishPicCache;
@@ -124,4 +126,13 @@ public class DishListFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            orderDetailBtn.setText("已点：" + dishMemory.size());
+            orderDetailBtn.postInvalidate();
+            String dishName = data.getStringExtra("dishName");
+            Toast.makeText(getActivity(), "已点：\"" + dishName + "\"", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

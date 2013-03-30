@@ -4,9 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.res.beans.DishOrder;
+import com.res.memory.DishMemory;
+import com.res.ui.DishActivity;
+import com.res.ui.DishListFragment;
 
 /**
  * <一句话功能简述>
@@ -20,13 +26,17 @@ import android.widget.TextView;
 
 public class MenuDetail extends Activity {
 
+    private DishMemory memory;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_detail);
+        memory = DishMemory.getInstance();
+
         final Intent intent = getIntent();
         final String dishName = intent.getStringExtra("dishName");
-        String price = intent.getStringExtra("price");
+        final String price = intent.getStringExtra("price");
         String flashPath = intent.getStringExtra("flashPath");
 
         final WebView flashView = (WebView) findViewById(R.id.flash);
@@ -37,7 +47,7 @@ public class MenuDetail extends Activity {
         final Button submitButton = (Button) findViewById(R.id.detail_submit);
 
         flashView.getSettings().setJavaScriptEnabled(true);
-        flashView.getSettings().setPluginsEnabled(true);
+        flashView.getSettings().setPluginState(WebSettings.PluginState.ON);
         flashView.loadUrl(flashPath);
         dishNameView.setText(dishName);
         dishPriceView.setText(price);
@@ -45,11 +55,11 @@ public class MenuDetail extends Activity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent submitIntent = new Intent();
-                //todo     submitIntent.setClass(this,null);
-
-                submitIntent.putExtra("dishName", dishName);
-                startActivity(submitIntent);
+                double priceNum = Double.parseDouble(price);
+                memory.addDishOrder(new DishOrder(dishName, priceNum, 1));
+                Intent intent = new Intent(MenuDetail.this, DishListFragment.class);
+                intent.putExtra("dishName", dishName);
+                setResult(Activity.RESULT_OK, intent);
                 finish();
             }
         });

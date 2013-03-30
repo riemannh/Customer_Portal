@@ -1,6 +1,8 @@
 package com.res.ui.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.*;
 import com.res.beans.DishItem;
 import com.res.beans.DishOrder;
 import com.res.memory.DishMemory;
+import com.res.view.MenuDetail;
 import com.res.view.R;
 
 /**
@@ -62,7 +65,10 @@ public class DishItemAdapter extends ArrayAdapter<DishItem> {
         icon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO 展示详情
+                Intent intent = new Intent(context, MenuDetail.class);
+                intent.putExtra("dishName", tag1.getText().toString())
+                        .putExtra("price", priceText.getText().toString());
+                ((Activity) context).startActivityForResult(intent, 0);
             }
         });
         return convertView;

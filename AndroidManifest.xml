@@ -15,26 +15,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuDetail"
-                  android:label="@string/menu_detail_title">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".TableSelect"
-                  android:label="@string/table_select_title">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                  android:label="@string/menu_detail_title"/>
+
+        <activity android:name=".TableSelect"/>
+
         <activity android:name=".Confirm"
-                  android:label="@string/menu_confirm">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+                  android:label="@string/menu_confirm"/>
+
         <activity android:name=".Success"
                   android:label="@string/success"/>
 
